@@ -1,0 +1,469 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card:hover {
+  border-color: rgba(2, 132, 199, 0.4);
+  box-shadow: 0 0 20px rgba(2, 132, 199, 0.15);
+}
+
+/* Subtle glowing text */
+.glow-text-cyan {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+.glow-text-blue {
+  text-shadow: 0 0 12px rgba(2, 132, 199, 0.6);
+}
+
+/* Leaflet Map Dark Styling Override */
+.leaflet-container {
+  background-color: #0B0F19 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #1E293B !important;
+  color: #F8FAFC !important;
+  border: 1px solid #334155;
+  border-radius: 8px;
+}
+
+.leaflet-popup-tip {
+  background-color: #1E293B !important;
+}
+
+/* ==========================================================================
+   AESTHETIC LIGHT THEME DESIGN SYSTEM (Triggered when html has class 'light')
+   ========================================================================== */
+
+html.light,
+html.light body {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+/* Page Canvas Background */
+html.light [class*="bg-[#0B0F19]"],
+html.light [class*="bg-[#0b0f19]"] {
+  background-color: #F1F5F9 !important;
+}
+
+/* Card, Panel, Modal, Drawer Surfaces */
+html.light [class*="bg-[#0F172A]"],
+html.light [class*="bg-[#0f172a]"] {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.02) !important;
+}
+
+/* Secondary Panels, Widgets, Floating Drawers, Tables */
+html.light [class*="bg-slate-900"],
+html.light [class*="bg-slate-950"] {
+  background-color: #F8FAFC !important;
+}
+
+html.light [class*="bg-[#1E293B]"] {
+  background-color: #FFFFFF !important;
+}
+
+html.light [class*="bg-slate-800"] {
+  background-color: #E2E8F0 !important;
+}
+
+/* Interactive Hover States */
+html.light [class*="hover:bg-slate-800"]:hover {
+  background-color: #F1F5F9 !important;
+}
+
+html.light [class*="hover:bg-slate-700"]:hover {
+  background-color: #E2E8F0 !important;
+}
+
+/* Borders */
+html.light [class*="border-slate-800"] {
+  border-color: #E2E8F0 !important;
+}
+
+html.light [class*="border-slate-700"] {
+  border-color: #CBD5E1 !important;
+}
+
+html.light [class*="divide-slate-800"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #E2E8F0 !important;
+}
+
+/* ==========================================================================
+   HIGH-CONTRAST AESTHETIC TYPOGRAPHY IN LIGHT THEME
+   ========================================================================== */
+
+/* Headings and Primary Titles - Deep Charcoal Navy */
+html.light .text-white,
+html.light .text-slate-100 {
+  color: #0F172A !important;
+}
+
+/* Subheadings and Strong Text - Rich Dark Slate */
+html.light .text-slate-200 {
+  color: #1E293B !important;
+}
+
+/* Body Text - Elegant Slate 700 */
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+/* Secondary & Muted Text - Slate 600 (Always crisp and clearly readable!) */
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+/* Subtle Footnotes - Slate 500 */
+html.light .text-slate-500 {
+  color: #64748B !important;
+}
+
+/* ==========================================================================
+   AESTHETIC JEWEL TONE ACCENT COLORS (High Contrast for Daylight Readability)
+   ========================================================================== */
+
+/* Cyan: Rich Oceanic Teal */
+html.light .text-cyan-400 {
+  color: #0891B2 !important;
+}
+html.light .text-cyan-300 {
+  color: #0E7490 !important;
+}
+html.light .text-cyan-200 {
+  color: #155E75 !important;
+}
+
+/* Sky / Blue: Vibrant Royal Sapphire */
+html.light .text-sky-400 {
+  color: #0284C7 !important;
+}
+
+/* Emerald: Lush Forest Jewel */
+html.light .text-emerald-400 {
+  color: #059669 !important;
+}
+html.light .text-emerald-300 {
+  color: #047857 !important;
+}
+
+/* Amber: Warm Golden Honey */
+html.light .text-amber-400 {
+  color: #D97706 !important;
+}
+html.light .text-amber-300 {
+  color: #B45309 !important;
+}
+
+/* Rose: Crimson Ruby */
+html.light .text-rose-400 {
+  color: #E11D48 !important;
+}
+html.light .text-rose-300 {
+  color: #BE123C !important;
+}
+
+/* Indigo: Deep Imperial Violet */
+html.light .text-indigo-400 {
+  color: #4F46E5 !important;
+}
+
+/* Purple: Vibrant Amethyst */
+html.light .text-purple-400 {
+  color: #7C3AED !important;
+}
+
+/* ==========================================================================
+   AESTHETIC PILL BADGES IN LIGHT THEME
+   ========================================================================== */
+
+/* Cyan Badge */
+html.light .bg-cyan-500\/10 {
+  background-color: #ECFEFF !important;
+}
+html.light .border-cyan-500\/30 {
+  border-color: #A5F3FC !important;
+}
+
+/* Sky Badge */
+html.light .bg-sky-500\/10 {
+  background-color: #F0F9FF !important;
+}
+html.light .border-sky-500\/30 {
+  border-color: #BAE6FD !important;
+}
+
+/* Emerald Badge */
+html.light .bg-emerald-500\/10 {
+  background-color: #ECFDF5 !important;
+}
+html.light .border-emerald-500\/30 {
+  border-color: #A7F3D0 !important;
+}
+
+/* Amber Badge */
+html.light .bg-amber-500\/10 {
+  background-color: #FFFBEB !important;
+}
+html.light .border-amber-500\/30 {
+  border-color: #FDE68A !important;
+}
+
+/* Rose Badge */
+html.light .bg-rose-500\/10 {
+  background-color: #FFF1F2 !important;
+}
+html.light .border-rose-500\/30 {
+  border-color: #FECDD3 !important;
+}
+
+/* Purple Badge */
+html.light .bg-purple-500\/10 {
+  background-color: #FAF5FF !important;
+}
+html.light .border-purple-500\/30 {
+  border-color: #DDD6FE !important;
+}
+
+/* Indigo Badge */
+html.light .bg-indigo-500\/10 {
+  background-color: #EEF2FF !important;
+}
+html.light .border-indigo-500\/30 {
+  border-color: #C7D2FE !important;
+}
+
+/* Slate Badge */
+html.light .bg-slate-700\/40 {
+  background-color: #F1F5F9 !important;
+  color: #475569 !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* ==========================================================================
+   TABLES IN LIGHT THEME
+   ========================================================================== */
+
+html.light thead {
+  background-color: #F1F5F9 !important;
+  border-bottom: 2px solid #E2E8F0 !important;
+}
+
+html.light thead th {
+  color: #334155 !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.05em !important;
+}
+
+html.light tbody tr {
+  border-bottom: 1px solid #E2E8F0 !important;
+  transition: background-color 150ms ease;
+}
+
+html.light tbody tr:hover {
+  background-color: #F8FAFC !important;
+}
+
+html.light tbody td {
+  color: #1E293B !important;
+}
+
+/* ==========================================================================
+   NAVIGATION & HEADER IN LIGHT THEME
+   ========================================================================== */
+
+html.light header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light aside {
+  background-color: #FFFFFF !important;
+  border-right: 1px solid #E2E8F0 !important;
+  box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.02) !important;
+}
+
+html.light aside h1 {
+  color: #0F172A !important;
+}
+
+html.light aside nav a {
+  color: #475569 !important;
+}
+
+html.light aside nav a:hover {
+  color: #0F172A !important;
+  background-color: #F1F5F9 !important;
+}
+
+html.light aside nav a[class*="text-cyan-400"],
+html.light aside nav a.active {
+  background-color: #ECFEFF !important;
+  color: #0891B2 !important;
+  border-color: #A5F3FC !important;
+}
+
+/* ==========================================================================
+   INPUTS & FORM CONTROLS IN LIGHT THEME
+   ========================================================================== */
+
+html.light input:not([type="checkbox"]):not([type="radio"]),
+html.light select,
+html.light textarea {
+  color: #0F172A !important;
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: #0891B2 !important;
+  box-shadow: 0 0 0 2px rgba(8, 145, 178, 0.15) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* ==========================================================================
+   ACTION BUTTONS WITH FILLED BACKGROUNDS KEEP CRISP WHITE TEXT
+   ========================================================================== */
+
+html.light button.bg-cyan-600,
+html.light button.bg-cyan-600 *,
+html.light [class*="bg-cyan-600"] button,
+html.light [class*="bg-cyan-600"] button *,
+html.light button.bg-cyan-500,
+html.light button.bg-cyan-500 *,
+html.light button.bg-sky-600,
+html.light button.bg-sky-600 *,
+html.light button.bg-blue-600,
+html.light button.bg-blue-600 *,
+html.light button.bg-indigo-600,
+html.light button.bg-indigo-600 *,
+html.light button.bg-emerald-600,
+html.light button.bg-emerald-600 *,
+html.light button.bg-rose-600,
+html.light button.bg-rose-600 *,
+html.light button.bg-amber-600,
+html.light button.bg-amber-600 *,
+html.light [class*="bg-gradient-to-r"],
+html.light [class*="bg-gradient-to-r"] *,
+html.light [class*="bg-gradient-to-tr"],
+html.light [class*="bg-gradient-to-tr"] * {
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   ALERT BANNERS IN LIGHT THEME
+   ========================================================================== */
+
+html.light [class*="bg-amber-950"] {
+  background-color: #FEF3C7 !important;
+  border-color: #FCD34D !important;
+  color: #92400E !important;
+}
+
+html.light [class*="bg-amber-950"] * {
+  color: #92400E !important;
+}
+
+html.light [class*="bg-rose-950"] {
+  background-color: #FFE4E6 !important;
+  border-color: #FDA4AF !important;
+  color: #9F1239 !important;
+}
+
+html.light [class*="bg-rose-950"] * {
+  color: #9F1239 !important;
+}
+
+html.light [class*="bg-emerald-950"] {
+  background-color: #D1FAE5 !important;
+  border-color: #6EE7B7 !important;
+  color: #065F46 !important;
+}
+
+html.light [class*="bg-emerald-950"] * {
+  color: #065F46 !important;
+}
+
+/* Scrollbars in Light Mode */
+html.light ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Leaflet Map in Light Mode */
+html.light .leaflet-container {
+  background-color: #F8FAFC !important;
+}
+
+html.light .leaflet-popup-content-wrapper {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light .leaflet-popup-tip {
+  background-color: #FFFFFF !important;
+}
