@@ -215,3 +215,5 @@ pytest tests/ -v
 - **SHA-256 Evidence Hashing**: Every uploaded FIR, document, and note is cryptographically hashed upon ingestion.
 - **Role-Based Access Control (RBAC)**: Fine-grained permissions enforced at the API layer.
 - **Immutable Audit Trail**: User actions (login, view, search, export, delete) are recorded in the audit ledger.
+#   A I - B a s e d - C r i m i n a l - N e t w o r k - A n a l y s i s  
+ 
